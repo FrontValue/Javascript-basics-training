@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .wrapper{
+    width:1100px;
+    margin:auto;
+  }
+  .header, .footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 20px;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .sidebar {
+    width: 25%;
+    background-color: #f8f8f8;
+    padding: 15px;
+  }
+  .content-bar {
+    width: 75%;
+    padding: 15px;
+  }
+  .product {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 1%;
+    box-sizing: border-box;
+    float: left;
+  }
+  .product-description {
+    font-weight: bold;
+  }
+  .product-price {
+    color: green;
+  }
+  .product-stock {
+    color: red;
+  }
+
+  .product-image {
+    float: left;
+    width: 50%;
+    padding-right: 20px;
+  }
+  .product-details {
+    float: left;
+    width: 50%;
+  }
+  .transport-details {
+    clear: both;
+    padding-top: 20px;
+  }
+  .add-to-cart {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  /* Register Form */
+
+  input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
