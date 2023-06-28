@@ -1,28 +1,29 @@
-export default class WishList {
+export default class ProductList {
     constructor(elementId) {
         this.element = document.getElementById(elementId);
-        this.items = [];
+        this.products = [];
     }
 
-    contains(itemId) {
+    contains(productId) {
         // This method should check in the `items` array if there's any item with the specified `itemId`, if yes, it should return true, otherwise it will return false;
-        return this.items.filter(item => item.id === itemId).length > 0;
+        return this.products.filter(product => product.id === productId).length > 0;
     }
 
-    add(item) {
+    add(product, callback) {
         // This method should add the item to the `items` array, then call the `render` method. You need to make sure that the item can't be added twice.
-        if (!this.contains(item.id)) {
-            this.items.push(item);
+        if (!this.contains(product.id)) {
+            product.callback = callback;
+            this.products.push(product);
             this.render();
         }
     }
 
-    remove(itemId) {
+    remove(productId) {
         // This method should remove the item specified by `itemId` from the `items` array. Then, you need to call the render method
-        const index = this.items.findIndex(item => item.id === itemId);
+        const index = this.products.findIndex(product => product.id === productId);
 
         if (index >= 0) {
-            this.items.splice(index, 1);
+            this.products.splice(index, 1);
             this.render();
         }
     }
@@ -30,15 +31,21 @@ export default class WishList {
     render() {
         this.clear();
 
-        this.items.forEach((i) => {
+        this.products.forEach(p => {
             const li = document.createElement('li');
-            const remove = document.createElement('button');
-            remove.innerHTML = 'Remove from wishlist';
-            remove.addEventListener('click', () => {
-                this.remove(i.id);
+            const add = document.createElement('button');
+            add.innerHTML = 'Add to wishlist';
+            add.dataset.id = p.id;
+            add.dataset.name = p.name;
+            add.addEventListener('click', (event) => {
+                const element = event.target;
+                p.callback({
+                    id: element.dataset.id,
+                    name: element.dataset.name
+                });
             });
-            li.innerHTML = i.name;
-            li.appendChild(remove);
+            li.innerHTML = p.name;
+            li.appendChild(add);
 
             this.element.appendChild(li);
         });
