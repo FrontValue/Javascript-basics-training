@@ -7,10 +7,9 @@ we want right? Let's start with adding persistence to the wishlist but also to t
 
 Start with implementing the following:
 > - Implement the localstorage for the wishlist
-> - Implement the localstorage for the products list
 
 Once implemented above functionality let's start testing the application by:
-- Verifying all functionalities are still behaving as in assignment 1
+- Verifying all functionalities are still behaving as in assignment 3
 - When refreshing the page the exact same state should be shown on the screen
 
 # Bonus 2
@@ -24,8 +23,7 @@ Start with implementing the following:
 > - Make sure every product has a unique id
 
 Once implemented above functionality let's start testing the application by:
-- Verifying all functionalities are still behaving as in assignment 1
+- Verifying all functionalities are still behaving as in assignment bonus
 - When adding a product you should see it in the products list and you should be able to add it to the wishlist
 - You can't add 2 products with the same name
 - You can't add a product with an empty name
-- When refreshing the page the exact same state should be shown on the screen

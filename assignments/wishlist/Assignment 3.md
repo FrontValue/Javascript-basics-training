@@ -9,4 +9,4 @@ Start with implementing the following:
 > - Create a separate file with the connecting functions so the app still renders
 
 Once implemented above functionality let's start testing the application by:
-- Verifying all functionalities are still behaving as in assignment 1
+- Verifying all functionalities are still behaving as in assignment 2
