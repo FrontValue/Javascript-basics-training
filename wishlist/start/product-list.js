@@ -4,14 +4,19 @@ export default class ProductList {
         this.products = [];
     }
 
-    contains(productId) {
+    containsWithId(productId) {
         // This method should check in the `items` array if there's any item with the specified `itemId`, if yes, it should return true, otherwise it will return false;
         return this.products.filter(product => product.id === productId).length > 0;
     }
 
+    containsWithName(productName) {
+        console.log(this.products.filter(product => product.name.toLowerCase() === productName.toLowerCase()).length > 0)
+        return this.products.filter(product => product.name.toLowerCase() === productName.toLowerCase()).length > 0;
+    }
+
     add(product, callback) {
         // This method should add the item to the `items` array, then call the `render` method. You need to make sure that the item can't be added twice.
-        if (!this.contains(product.id)) {
+        if (!this.containsWithId(product.id)) {
             product.callback = callback;
             this.products.push(product);
             this.render();
