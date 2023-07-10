@@ -2,7 +2,7 @@ const Wishlist = function(elementId) {
     // This array will contain the items present in the wishlist
     this.items = []
 
-    // We keep a reference to the element associated to the whishlist
+    // We keep a reference to the element associated to the wishlist
     this.element = document.getElementById(elementId);
 };
 
