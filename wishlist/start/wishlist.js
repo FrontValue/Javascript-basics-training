@@ -1,7 +1,10 @@
 export default class WishList {
+    STORAGE_KEY = 'wishlist';
+
     constructor(elementId) {
         this.element = document.getElementById(elementId);
-        this.items = [];
+        this.items = JSON.parse(localStorage.getItem(this.STORAGE_KEY)) || [];
+        this.render();
     }
 
     contains(itemId) {
@@ -13,6 +16,7 @@ export default class WishList {
         // This method should add the item to the `items` array, then call the `render` method. You need to make sure that the item can't be added twice.
         if (!this.contains(item.id)) {
             this.items.push(item);
+            localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.items));
             this.render();
         }
     }
@@ -23,6 +27,7 @@ export default class WishList {
 
         if (index >= 0) {
             this.items.splice(index, 1);
+            localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.items));
             this.render();
         }
     }
