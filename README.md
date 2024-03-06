@@ -1,7 +1,7 @@
 # Javascript-basics-training
 The assignments for the javascript basics training
 
-Slides can be found here: https://slides.com/frankmerema/javascript-basics-part-2
+Slides can be found here: https://slides.com/frontvalue/javascript-basics
 
 ## Exercises:
 - [Arrays](./assignments/arrays/array%20assignments.md)
